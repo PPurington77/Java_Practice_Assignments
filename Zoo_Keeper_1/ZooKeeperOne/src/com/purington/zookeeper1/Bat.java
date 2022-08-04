@@ -4,6 +4,7 @@ public class Bat extends Mammal {
 	
 	
 	public Bat() {
+		super();
 		this.energyLevel = 300;
 	}
 	

@@ -3,7 +3,7 @@ package com.purington.zookeeper1;
 public class Gorilla extends Mammal {
 
 	public Gorilla() {
-		
+		super();
 	}
 	
 	public int getEnergyLevel() {
