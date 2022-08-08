@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+C:\Users\papur\OneDrive\Desktop\JAVA\Practice_Assignments\JavaHackathon\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-4204259796.index
-764537937.index
