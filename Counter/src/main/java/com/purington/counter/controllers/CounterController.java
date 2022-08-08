@@ -35,7 +35,7 @@ public class CounterController {
 		//gets the url of this page i.e. localhost:8080/counter
 		String indexUrl = request.getRequestURL().toString();
 		model.addAttribute("count", counting);
-		//removes the last 9 characters from index url to match localhost:8080
+		//removes the last 8 characters from index url to match localhost:8080
 		model.addAttribute("home", indexUrl.substring(0, indexUrl.length() - 8));
 		return "Counter.jsp";
 	}
