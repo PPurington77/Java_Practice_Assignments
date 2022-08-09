@@ -23,7 +23,8 @@
 	<table class="table table-dark">
 		<thead>
 			<tr>
-				<th scope="row">Title</th>
+				<th>ID</th>
+				<th>Title</th>
 				<th>Description</th>
 				<th>Number of Pages</th>
 			</tr>
@@ -31,7 +32,8 @@
 		<tbody>
 			<c:forEach var="book" items="${books}">
 				<tr>
-					<td scope="row"><c:out value="${book.title}"/></td>
+					<td><c:out value="${book.id}"/></td>
+					<td><c:out value="${book.title}"/></td>
 					<td><c:out value="${book.description}"/></td>
 					<td><c:out value="${book.numberOfPages}"/></td>
 				</tr>
