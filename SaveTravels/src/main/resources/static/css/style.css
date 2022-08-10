@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#container {
+	width: 50%;
+	margin: 10px auto;
+}
+
+h1 {
+	color: dodgerblue;
+}
+
+#expenseContainer {
+	width: 40%;
+	margin: 10px auto;
+	
+}
