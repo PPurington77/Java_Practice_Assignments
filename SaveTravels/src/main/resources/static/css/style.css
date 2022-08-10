@@ -18,5 +18,9 @@ h1 {
 #expenseContainer {
 	width: 40%;
 	margin: 10px auto;
-	
+}
+
+#editContainer {
+	width: 40%;
+	margin: 10px auto;
 }

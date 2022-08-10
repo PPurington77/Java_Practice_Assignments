@@ -16,37 +16,14 @@
     <link rel="stylesheet" href="/css/style.css"> <!-- change to match your file/naming structure...this is for your style sheet -->
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<title>Expenses</title>
+<title>Edit</title>
 </head>
 <body>
-	<div id="container">
-		<h1>Save Travels</h1>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-				<th scope="col" class="text-center">Expense</th>
-				<th scope="col" class="text-center">Vendor</th>
-				<th scope="col" class="text-center">Amount</th>
-				<th scope="col" class="text-center">Action</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="expense" items="${expenses}">
-					<tr>
-						<td class="text-center"><c:out value="${expense.type}"/></td>
-						<td class="text-center"><c:out value="${expense.vendor}"/></td>
-						<td class="text-center"><c:out value="${expense.amount}"/></td>
-						<td class="text-center"><a href="/expenses/${expense.id}/edit" class="btn btn-primary">Edit</a></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
-	<div id="expenseContainer">
-		<h1>Add an expense:</h1>
-		<form:form action="/expenses" method="post" modelAttribute="expense">
-		<input type="hidden" name="_method" value="put"/>
-		
+	<div id="editContainer">
+		<h1>Edit <c:out value="${expense.type}"/></h1>
+		<form:form action="/expenses/${expense.id}/update" method="post" modelAttribute="expense" class="form">
+			<input type="hidden" name="_method" value="put"/>
+			
 			<form:label path="type">Expense Name: </form:label><br>
 			<form:errors path="type" class="alert-danger"/>
 			<form:input type="text" path="type" style="width:100%;"/>
@@ -63,7 +40,7 @@
 			<form:errors path="description" class="alert-danger"/>
 			<form:textarea path="description" style="width:100%; rows:20%;"/>
 			
-			<input type="submit" value="Create" class="btn btn-primary"/>
+			<input type="submit" value="Update" class="btn btn-primary"/>
 			
 		</form:form>
 	</div>
