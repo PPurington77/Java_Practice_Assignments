@@ -25,20 +25,20 @@ public class Book {
     
     //*******Member Variables******
     
-    @NotNull
-    @Size(min = 5, max = 200)
+    @NotNull(message="must not be empty")
+    @Size(min = 5, max = 200, message="must be atleast 5 characters long")
     private String title;
     
-    @NotNull
-    @Size(min = 5, max = 200)
+    @NotNull(message="must not be empty")
+    @Size(min = 5, max = 200, message="must be atleast 5 characters long")
     private String description;
     
-    @NotNull
-    @Size(min = 3, max = 40)
+    @NotNull(message="must not be empty")
+    @Size(min = 3, max = 40, message="must be atleast 3 characters long")
     private String language;
     
-    @NotNull
-    @Min(100)
+    @NotNull(message="must not be empty")
+    @Min(value=100, message="must be atleast 100 pages long")
     private Integer numberOfPages;
     
     //******Data Creation Variables**********
@@ -55,7 +55,7 @@ public class Book {
     public Book() { //Always need an empty one..cause rules
     }
     
-    public Book(String title, String desc, String lang, int pages) {//include everything that is unique about your class, don't need created/updated at
+    public Book(String title, String desc, String lang, Integer pages) {//include everything that is unique about your class, don't need created/updated at
         this.title = title;
         this.description = desc;
         this.language = lang;
