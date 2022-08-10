@@ -33,10 +33,16 @@
 			<tbody>
 				<c:forEach var="expense" items="${expenses}">
 					<tr>
-						<td class="text-center"><c:out value="${expense.type}"/></td>
+						<td class="text-center"><a href="/expenses/${expense.id}/view"><c:out value="${expense.type}"/></a></td>
 						<td class="text-center"><c:out value="${expense.vendor}"/></td>
 						<td class="text-center"><c:out value="${expense.amount}"/></td>
-						<td class="text-center"><a href="/expenses/${expense.id}/edit" class="btn btn-primary">Edit</a></td>
+						<td class="text-center d-flex justify-content-around"><a href="/expenses/${expense.id}/edit" class=" btn btn-primary">Edit</a>
+						<form action="/expenses/${expense.id}/delete" method="post">
+							<input type="hidden" name="_method" value="delete">
+							<input type="submit" value="Delete" class=" btn btn-danger">
+						</form>
+						</td>
+						
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -45,7 +51,6 @@
 	<div id="expenseContainer">
 		<h1>Add an expense:</h1>
 		<form:form action="/expenses" method="post" modelAttribute="expense">
-		<input type="hidden" name="_method" value="put"/>
 		
 			<form:label path="type">Expense Name: </form:label><br>
 			<form:errors path="type" class="alert-danger"/>

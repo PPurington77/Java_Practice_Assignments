@@ -80,9 +80,17 @@ public class ExpenseController {
 		return "redirect:/expenses";
 	}
 	
+	//Display
+	@GetMapping("/expenses/{id}/view")
+	public String viewExpense(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("expense", expenseService.findExpense(id));
+		return "viewExpense.jsp";
+	}
+	
 	//Action
 	@DeleteMapping("/expenses/{id}/delete")
 	public String deleteExpense(@PathVariable("id") Long id) {
+		System.out.println("id");
 		expenseService.deleteExpense(id);
 		
 		return "redirect:/expenses";

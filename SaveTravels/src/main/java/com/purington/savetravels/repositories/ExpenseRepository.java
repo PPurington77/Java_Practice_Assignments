@@ -13,5 +13,7 @@ public interface ExpenseRepository extends CrudRepository<Expense, Long>{
 	List<Expense> findAll();
 	
 	
+	
+	
 
 }
