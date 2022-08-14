@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#container {
+	padding: 50px;
+	width: 60%;
+	margin: 0 auto;
+}
+
+#reg {
+	width: 25%;
+}
+
+#reg input {
+	display: block;
+}
+
+#login {
+	width: 25%;
+}
+
+#login input {
+	display: block;
+}
